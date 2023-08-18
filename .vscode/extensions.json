@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "formulahendry.vscode-mysql",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+    ]
+}

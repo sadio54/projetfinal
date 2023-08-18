@@ -1,0 +1,9 @@
+# config/packages/easy_admin.yaml
+easy_admin:
+    entities:
+        Illustration:
+            class: App\Entity\Illustration
+           
+           
+            new:
+                - 'illustration' 

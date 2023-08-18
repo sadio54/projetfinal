@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits - Nation Baller{% endblock %}
+
+{% block content %}
+
+<div class="row product-container">
+    <div class="col-md-3">
+        <h1>filtrer</h1>
+        {{ form(form) }}
+       {#  #}
+    </div>
+    
+    <div class="col-md-9">
+        <h1>Nos produits</h1>
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4">
+                   {% include 'product/single_product.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

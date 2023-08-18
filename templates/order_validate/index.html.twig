@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de ma commande - Nation baller{% endblock %}
+
+{% block content %}
+    <h2>Confirmation de commande</h2>
+    <p>Bonjours <b> {{ order.user.firstname }} {{ order.user.lastname }}</b>, <br><br>
+    Nous vous remercions pour votre commande n°<strong>{{ order.reference }} </strong><br>
+    une confirmatrion vien de vous etre envoyée par mail a l'adresse <strong>{{ order.user.email }}</strong>.
+    <hr>
+    Votre commande sera livrée par <strong>{{ order.carrierName}} </strong> a l'adresse suivant : <br>
+    <strong>{{ order.delivery|raw}}</strong>
+    <hr>
+    Pour suivre votre commande veillez vous rendre dans votre <a href="{{ path('account_order') }}">Mes commandes</a>
+     </p>
+{% endblock %}

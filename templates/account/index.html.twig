@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}mon compte - Nation Baller{% endblock %}
+
+{% block content %}
+    <h1> Mon compte </h1>
+     {% if is_granted('ROLE_ADMIN') %}
+ Si vous êtes un administrateur,vous pouvez <a href="/admin">accéder au backoffice via se lien</a> <br>
+ {% endif %}
+    bienvenue <b> {{ app.user.firstname }} </b>  dans votre compte.<br> C'est ici que vous aller pouvoir gerer toutes vos information  personnelles.<br><hr>
+      <hr>
+    <div class="row">
+          <div class="col-md-4">
+               <div class="account-item text-center">
+                 <a href="{{ path('account_password') }}">Modifier mon mot de passe</a> <br>
+               </div>
+          </div>
+          <div class="col-md-4">
+               <div class="account-item text-center ">
+                 <a href="{{ path('account_address') }}">Gerer  mes adresses</a> <br>
+               </div>
+          </div>
+          <div class="col-md-4">
+               <div class="account-item text-center">
+                 <a href="{{ path('account_order') }}">Mes commandes</a> <br>
+               </div>
+          </div>
+    </div>
+<hr>
+{% endblock %}

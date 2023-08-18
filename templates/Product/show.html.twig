@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }} - Nation Baller{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-4"> 
+    
+    <img src="/images/{{ product.illustration }}"  alt=" {{ product.name}}" class="imf-fluid">
+    </div>
+    <div class="col-md-8"> 
+    <h1></h1>
+    <p> {{ product.subtitle}} </p>
+    <span class="product-page-price">{{ (product.price / 100) | number_format(2, ',') }}€</span>
+    <hr>
+
+    <p> 
+        {{ product.description}}
+    </p>
+    <a href="{{ path('add_to_cart', {'id' : product.id })}}" class="btn btn-primary">Ajouter au panier </a>
+    </div>
+ </div>
+ <hr>
+   <p>Décrouvrez nos articles les plus en vue en se moment</p>
+      <div class="row">
+          {% for product in products  %}
+          <div class="col-md-3">
+              {% include 'product/single_product.html.twig' %}
+          </div>
+        {% endfor %}
+    </div><!-- /.row -->
+
+
+
+
+{% endblock %}
