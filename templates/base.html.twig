@@ -162,7 +162,7 @@
             <a class="nav-link active" aria-current="page" href="#">qui sommes-nous</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+            <a class="nav-link active" aria-current="page" href="{{ path('contact')}}">Contact</a>
           </li>
          
         </ul>
@@ -193,14 +193,14 @@
 
   <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
     <div class="carousel-indicators">
-      {% for key,header in header %}
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to={{ key }}  {% if key == 0 %} class="active"{% endfor %} aria-current="true" aria-label="Slide 1"></button>
+      {% for key,header in headers %}
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to={{ key }}  {% if key == 0 %} class="active"{% endif %} aria-current="true" aria-label="Slide 1"></button>
 
       {% endfor %}
     </div>
     <div class="carousel-inner">
-    {% for key,header in header %}
-      <div class="carousel-item {% if key == 0  %} active {% endfor %} "  style="background: url('/images/{{ header.illustration}}'); background-size:cover;">
+    {% for key,header in headers %}
+      <div class="carousel-item {% if key == 0  %} active {% endif %} "  style="background: url('/images/{{ header.illustration}}'); background-size:cover;">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>{{ header.title }}</h1>
